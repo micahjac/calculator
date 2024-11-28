@@ -13,3 +13,21 @@ def process_factorials_and_powers(expression):
 
     return expression
 
+def evaluate_expression(expression):
+   """
+   Switches '!' with the factorial and '^' with powers
+   evaluates a mathematical expression string using safe evaluation.
+   Returns: result or the error.
+   """
+   expression = process_factorials_and_powers(expression)
+   try:
+       result = eval(expression, {"math": math})
+       return result
+   except ZeroDivisionError:
+       return "Error: Division by zero is not allowed."
+   except SyntaxError:
+       return "Error: Invalid syntax. Please check your input."
+   except Exception as e:
+       return f"Error: {e}"
+
+

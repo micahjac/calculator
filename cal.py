@@ -30,4 +30,20 @@ def evaluate_expression(expression):
    except Exception as e:
        return f"Error: {e}"
 
+def main():
+   while True:
+       print("If you want to exit, enter 'exit'.")
+       user_input = input("Enter an expression: ")
+
+
+       if user_input.lower() == 'exit':
+           break
+
+
+       result = evaluate_expression(user_input)
+       print("Result:", result)
+
+
+if __name__ == "__main__":
+   main()
 
